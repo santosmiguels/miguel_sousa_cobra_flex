@@ -14,7 +14,7 @@ def calcular_combustivel():
     msg = None
     if request.method == 'POST':
         gasolina = float(request.form.get("gasolina", "").replace(",","."))
-        etano = float(request.form.get("etanol", "").replace(",","."))
+        etanol = float(request.form.get("etanol", "").replace(",","."))
         result = "Etanol" if etanol <= gasolina*0.75 else "Gasolina"
         msg = f"melhor abastecer com {result}."
     return render.template("index.html", mensagem=msg)
